@@ -1,0 +1,22 @@
+<h1>Who Will Win IPL 2018 ?</h1>
+
+<h3>Vote for your favourite team !!! </h3>
+<hr />
+
+<p *ngIf="!candidatosLista"><em>Loading...</em></p>
+
+<table class='table' *ngIf="candidatosLista">
+  <thead>
+  <tr>
+    <th>Team Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let candidato of candidatosLista">
+    <td>{{ candidato.candidatoNome }}</td>
+    <td>
+      <button (click)="salvar(candidato)" class="btn btn-primary"> Votar <i class="glyphicon glyphicon-thumbs-up"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
